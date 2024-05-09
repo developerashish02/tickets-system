@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const signUpApi = createApi({
+export const signUpApi = createApi({
   reducerPath: "signUpApi",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000" }),
   endpoints: (builder) => ({
@@ -15,4 +15,3 @@ const signUpApi = createApi({
 });
 
 export const { useSignUpMutation } = signUpApi;
-export default signUpApi.reducer;

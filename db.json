@@ -6,6 +6,31 @@
       "email": "developerashish02@gmail.com",
       "password": "Ashugaikwad1@",
       "role": "user"
+    },
+    {
+      "id": "6c1b",
+      "username": "T2121361246550",
+      "email": "developerashish02@gmail.com",
+      "password": "Ashugaikwad1@",
+      "role": "tech-support"
+    },
+    {
+      "id": "8002",
+      "username": "T2121361246550",
+      "email": "developerashish02@gmail.com",
+      "password": "Ashugaikwad1@",
+      "role": "tech-support"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "3e56",
+      "ticket-name": "Not Able to login",
+      "priority": "high",
+      "file": null,
+      "description": "i am not able to login into the app pls fix that as soon as possible",
+      "date": "2024-05-09",
+      "userId": "8002"
     }
   ]
 }

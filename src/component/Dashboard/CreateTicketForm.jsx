@@ -1,13 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-
-const initialValues = {
-  "ticket-name": "",
-  priority: "low",
-  file: null,
-  description: "",
-  date: new Date().toISOString().substr(0, 10), // Calculate today's date
-};
+import { useCreateTicketMutation } from "../../services/ticketsApi";
+import useGetUser from "../../Hooks/useGetUser";
 
 const validationSchema = Yup.object({
   "ticket-name": Yup.string().required("Ticket name is required"),
@@ -15,12 +9,28 @@ const validationSchema = Yup.object({
   file: Yup.mixed().notRequired(),
   description: Yup.string().required("Description is required"),
   date: Yup.date().required("Date is required"),
+  userId: Yup.string().required("user id is required"),
 });
 
 const CreateTicketForm = () => {
-  const handleSubmit = (values, { setSubmitting, resetForm }) => {
+  const user = useGetUser();
+
+  const initialValues = {
+    "ticket-name": "",
+    priority: "low",
+    file: null,
+    description: "",
+    date: new Date().toISOString().substr(0, 10),
+    userId: user?.data?.id,
+  };
+  console.log(user, "user details");
+  const [createTicket, { isError, isSuccess, data, isLoading }] =
+    useCreateTicketMutation();
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     // Handle form submission logic here
     console.log("Form values:", values);
+    await createTicket(values);
+    console.log(data, "Api data");
     resetForm();
     setSubmitting(false);
   };
@@ -88,9 +98,10 @@ const CreateTicketForm = () => {
             type="submit"
             className="py-3 px-2 bg-[#FAB005] font-[Poppins] text-base font-semibold rounded-xl border-2 border-black border-b-4 "
           >
-            Create Ticket
+            {isLoading ? "Create Ticket..." : "Create Ticket"}
             <i className="fa-solid fa-arrow-right-to-bracket ml-2"></i>
           </button>
+          {isError && <p>Something went wrong</p>}
         </Form>
       </Formik>
     </div>

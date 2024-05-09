@@ -1,12 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import signUpReducer from "./services/SignUpApi";
-import userSlice from "./actions/userSlice";
+import { ticketsApi } from "./services/ticketsApi";
+import { signUpApi } from "./services/signUpApi";
 
 const appStore = configureStore({
   reducer: {
-    user: userSlice,
-    signUpApi: signUpReducer,
+    [ticketsApi.reducerPath]: ticketsApi.reducer,
+    [signUpApi.reducerPath]: signUpApi.reducer,
   },
+
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(signUpApi.middleware, ticketsApi.middleware),
 });
 
 export default appStore;

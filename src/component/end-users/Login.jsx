@@ -3,9 +3,8 @@ import { initialValues } from "../../utils/constants";
 import { useFormik } from "formik";
 import { validationSchema } from "../../utils/validations";
 import { useState } from "react";
-import { useSignUpMutation } from "../../services/SignUpApi";
+import { useSignUpMutation } from "../../services/signUpApi";
 import { useDispatch } from "react-redux";
-import { addUserDetails } from "../../actions/userSlice";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
