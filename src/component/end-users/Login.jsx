@@ -1,30 +1,41 @@
-// import simile from "../../assets/img/smiling,png";
-import { initialValues } from "../../utils/constants";
+import {
+  initialValuesForSignIn,
+  initialValuesForSignUp,
+} from "../../utils/constants";
 import { useFormik } from "formik";
-import { validationSchema } from "../../utils/validations";
 import { useState } from "react";
-// import { useSignUpMutation } from "../../services/signUpApi";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useSignUpMutation } from "../../services/SignUpApi";
+import {
+  validationSchemaForSignIn,
+  validationSchemaForSignUp,
+} from "../../utils/validations";
+import * as Yup from "yup";
 
 const Login = () => {
   const [signIn, setSignIn] = useState(true);
-  const [createUser, { isLoading }] = useSignUpMutation();
+  const [createUser] = useSignUpMutation();
   const navigate = useNavigate();
 
+  console.log(signIn, "sign in state ");
+
   const formik = useFormik({
-    initialValues: initialValues,
-    validationSchema: validationSchema,
+    initialValues: signIn ? initialValuesForSignIn : initialValuesForSignUp,
+    validationSchema: Yup.object(
+      signIn ? validationSchemaForSignIn : validationSchemaForSignUp
+    ),
     onSubmit: async (values, { resetForm, setSubmitting }) => {
       if (!signIn) {
         const user = await createUser(values);
         const userString = JSON.stringify(user);
         localStorage.setItem("user", userString);
-        resetForm();
-        setSubmitting(false);
         navigate("/");
+      } else {
+        console.log("values...", values);
       }
+
+      setSubmitting(false);
+      resetForm();
     },
   });
 
