@@ -1,8 +1,33 @@
-import CreateTicketForm from "./CreateTicketForm";
+import React from "react";
+import { useGetUsersTicketsQuery } from "../../services/ticketsApi";
 import Ticket from "./Ticket";
 import { NavLink } from "react-router-dom";
+import useGetUser from "../../Hooks/useGetUser";
 
 const Tickets = () => {
+  const { data: userData } = useGetUser();
+  const userId = userData?.id;
+
+  const {
+    data: tickets,
+    isError,
+    isLoading,
+    isSuccess,
+  } = useGetUsersTicketsQuery(userId);
+
+  const userTickets =
+    isSuccess && tickets?.filter((user) => user?.userId == userData.id);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error loading tickets</div>;
+  }
+
+  console.log(tickets, "tickets");
+
   return (
     <div className="w-full h-full bg-[#E7E7E7] p-4 mx-auto">
       <div className="flex justify-around">
@@ -16,10 +41,9 @@ const Tickets = () => {
       </div>
 
       <div className="flex  flex-col items-center ">
-        <Ticket />
-        <Ticket />
-        <Ticket />
-        <Ticket />
+        {userTickets?.map((ticket) => (
+          <Ticket key={ticket.id} ticket={ticket} />
+        ))}
       </div>
     </div>
   );

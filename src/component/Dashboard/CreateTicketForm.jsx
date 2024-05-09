@@ -1,6 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import { useCreateTicketMutation } from "../../services/ticketsApi";
+import {
+  useCreateTicketMutation,
+  useGetUsersTicketsQuery,
+} from "../../services/ticketsApi";
 import useGetUser from "../../Hooks/useGetUser";
 
 const validationSchema = Yup.object({
@@ -14,6 +17,7 @@ const validationSchema = Yup.object({
 
 const CreateTicketForm = () => {
   const user = useGetUser();
+  const { refetch } = useGetUsersTicketsQuery();
 
   const initialValues = {
     "ticket-name": "",
@@ -33,6 +37,7 @@ const CreateTicketForm = () => {
     console.log(data, "Api data");
     resetForm();
     setSubmitting(false);
+    refetch();
   };
 
   return (

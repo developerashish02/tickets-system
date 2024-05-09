@@ -20,6 +20,13 @@
       "email": "developerashish02@gmail.com",
       "password": "Ashugaikwad1@",
       "role": "tech-support"
+    },
+    {
+      "id": "3445",
+      "username": "ashugaikwad496_112",
+      "email": "developerashish02@gmail.com",
+      "password": "Ashugaikwad1@",
+      "role": "user"
     }
   ],
   "tickets": [
@@ -31,6 +38,60 @@
       "description": "i am not able to login into the app pls fix that as soon as possible",
       "date": "2024-05-09",
       "userId": "8002"
+    },
+    {
+      "id": "9255",
+      "ticket-name": "issue on apps ",
+      "priority": "medium",
+      "file": null,
+      "description": "i have some issues on apps ",
+      "date": "2024-05-09",
+      "userId": "8002"
+    },
+    {
+      "id": "8a1b",
+      "ticket-name": "Not Able to login",
+      "priority": "low",
+      "file": null,
+      "description": "not able to find the passwords ",
+      "date": "2024-05-09",
+      "userId": "8002"
+    },
+    {
+      "id": "2610",
+      "ticket-name": "Not Able to login",
+      "priority": "high",
+      "file": null,
+      "description": "hello boss",
+      "date": "2024-05-09",
+      "userId": "8002"
+    },
+    {
+      "id": "cbbc",
+      "ticket-name": "Not Able to login",
+      "priority": "high",
+      "file": null,
+      "description": "aaaaaaaa",
+      "date": "2024-05-09",
+      "userId": "8002"
+    },
+    {
+      "id": "4aa2",
+      "ticket-name": "Not Able to login",
+      "priority": "medium",
+      "file": null,
+      "description": "hello bacchhi",
+      "date": "2024-05-09",
+      "userId": "3445"
+    },
+    {
+      "id": "dcb4",
+      "ticket-name": "Not Able to login",
+      "priority": "medium",
+      "file": null,
+      "description": "hello bhai how are you",
+      "date": "2024-05-09",
+      "userId": "3445"
     }
   ]
 }

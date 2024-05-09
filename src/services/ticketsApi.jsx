@@ -13,7 +13,11 @@ export const ticketsApi = createApi({
         body: ticketsData,
       }),
     }),
+
+    getUsersTickets: builder.query({
+      query: (userId) => `/tickets`,
+    }),
   }),
 });
 
-export const { useCreateTicketMutation } = ticketsApi;
+export const { useCreateTicketMutation, useGetUsersTicketsQuery } = ticketsApi;

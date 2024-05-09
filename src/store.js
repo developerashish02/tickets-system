@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { ticketsApi } from "./services/ticketsApi";
-import { signUpApi } from "./services/signUpApi";
+import { signUpApi } from "./services/SignUpApi";
 
 const appStore = configureStore({
   reducer: {
