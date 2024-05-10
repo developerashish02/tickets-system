@@ -19,48 +19,36 @@ const appRouter = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "",
-        element: (
-          <Protected>
-            <Tickets />
-          </Protected>
-        ),
-      },
-      {
-        path: "/contact-us",
-        element: (
-          <Protected>
-            <TicketForm />
-          </Protected>
-        ),
-      },
-      {
-        path: "/create-ticket",
-        element: (
-          <Protected>
-            <CreateTicketPage />
-          </Protected>
-        ),
-      },
-      {
         path: "/login",
         element: <Login />,
       },
+
       {
-        path: "/tech-dashboard",
-        element: (
-          <Protected>
-            <TechSupportDashboard />
-          </Protected>
-        ),
+        element: <Protected role="user" />,
+        children: [
+          {
+            path: "/create-ticket",
+            element: <CreateTicketPage />,
+          },
+          {
+            path: "",
+            element: <Tickets />,
+          },
+        ],
       },
+
       {
-        path: "/ticket-response",
-        element: (
-          <Protected>
-            <TicketResponse />
-          </Protected>
-        ),
+        element: <Protected role="tech-support" />,
+        children: [
+          {
+            path: "/tech-dashboard",
+            element: <TechSupportDashboard />,
+          },
+          {
+            path: "/ticket-response",
+            element: <TicketResponse />,
+          },
+        ],
       },
     ],
   },

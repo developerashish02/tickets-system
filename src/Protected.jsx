@@ -1,17 +1,15 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import useGetUser from "./Hooks/useGetUser";
 
-const Protected = ({ children }) => {
+const Protected = ({ role }) => {
   const userData = useGetUser();
 
-  console.log(userData, "userData");
-
-  if (userData === null) {
+  if (userData === null || userData.role !== role) {
     return <Navigate to="/login" replace />;
   }
 
-  return children;
+  return <Outlet />;
 };
 
 export default Protected;
