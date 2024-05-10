@@ -11,6 +11,7 @@ import Protected from "./Protected.jsx";
 import Tickets from "./component/Dashboard/Tickets.jsx";
 import CreateTicketPage from "./component/Dashboard/CreateTicketPage.jsx";
 import TechSupportDashboard from "./component/TechSupportDashboard/TechSupportDashboard.jsx";
+import TicketResponse from "./component/TechSupportDashboard/TicketResponse.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -50,6 +51,14 @@ const appRouter = createBrowserRouter([
         element: (
           <Protected>
             <TechSupportDashboard />
+          </Protected>
+        ),
+      },
+      {
+        path: "/ticket-response",
+        element: (
+          <Protected>
+            <TicketResponse />
           </Protected>
         ),
       },

@@ -39,7 +39,45 @@
       "file": "",
       "description": "kaise hai app majama",
       "date": "2024-05-10",
-      "userId": "ca19"
+      "userId": "ca19",
+      "replies": []
+    },
+    {
+      "id": "8678",
+      "ticket-name": "i have some issue when i am calling ",
+      "priority": "high",
+      "file": "",
+      "description": "aaaaaaaaaaaaaaaa",
+      "date": "2024-05-10",
+      "userId": "257c"
+    }
+  ],
+  "ticket-replies": [
+    {
+      "id": "285a",
+      "userId": "ad63",
+      "file": "",
+      "description": "hello "
+    },
+    {
+      "id": "4d6f",
+      "userId": "ad63",
+      "file": "",
+      "description": "hello "
+    },
+    {
+      "id": "1bf2",
+      "userId": "ca19",
+      "file": "C:\\fakepath\\Ashish Resume 1.pdf",
+      "description": "heee",
+      "isResolved": false
+    },
+    {
+      "id": "bc72",
+      "userId": "ca19",
+      "file": "C:\\fakepath\\Ashish _Gaikwad.pdf",
+      "description": "kasie ho bacho ",
+      "isResolved": false
     }
   ]
 }

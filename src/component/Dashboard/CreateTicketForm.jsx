@@ -24,6 +24,7 @@ const CreateTicketForm = () => {
     description: "",
     date: new Date().toISOString().substr(0, 10),
     userId: user?.data?.id || user?.id,
+    isResolved: false,
   };
   console.log(user, "user details");
   const [createTicket, { isError, isSuccess, data, isLoading }] =

@@ -17,7 +17,19 @@ export const ticketsApi = createApi({
     getUsersTickets: builder.query({
       query: (userId) => `/tickets`,
     }),
+
+    addReplyToTicket: builder.mutation({
+      query: (updatedTicket) => ({
+        url: "/ticket-replies",
+        method: "POST",
+        body: updatedTicket,
+      }),
+    }),
   }),
 });
 
-export const { useCreateTicketMutation, useGetUsersTicketsQuery } = ticketsApi;
+export const {
+  useCreateTicketMutation,
+  useGetUsersTicketsQuery,
+  useAddReplyToTicketMutation,
+} = ticketsApi;
