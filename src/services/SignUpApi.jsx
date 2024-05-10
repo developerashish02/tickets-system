@@ -11,7 +11,11 @@ export const signUpApi = createApi({
         body: userDetails,
       }),
     }),
+
+    signIn: builder.query({
+      query: () => "/users",
+    }),
   }),
 });
 
-export const { useSignUpMutation } = signUpApi;
+export const { useSignUpMutation, useSignInQuery } = signUpApi;

@@ -1,115 +1,45 @@
 {
   "users": [
     {
-      "id": "a8f1",
-      "username": "T2121361246550",
+      "id": "ad63",
       "email": "developerashish02@gmail.com",
       "password": "Ashugaikwad1@",
+      "username": "ashishGaikwad",
       "role": "user"
     },
     {
-      "id": "6c1b",
-      "username": "T2121361246550",
-      "email": "developerashish02@gmail.com",
+      "id": "257c",
+      "email": "test1@gmail.com",
       "password": "Ashugaikwad1@",
+      "username": "akaThangesh1",
       "role": "tech-support"
     },
     {
-      "id": "8002",
-      "username": "T2121361246550",
-      "email": "developerashish02@gmail.com",
+      "id": "ca19",
+      "email": "work.ashish.gaikwad@gmail.com",
       "password": "Ashugaikwad1@",
-      "role": "tech-support"
-    },
-    {
-      "id": "3445",
-      "username": "ashugaikwad496_112",
-      "email": "developerashish02@gmail.com",
-      "password": "Ashugaikwad1@",
+      "username": "T2121361246530",
       "role": "user"
-    },
-    {
-      "id": "d55a",
-      "email": "developerashish02@gmail.com",
-      "password": "Ashugaikwad1@",
-      "username": "T2121361246530"
-    },
-    {
-      "id": "fb0e",
-      "email": "developerashish02@gmail.com",
-      "password": "Ashugaikwad1@",
-      "username": "ashugaikwad496"
-    },
-    {
-      "id": "1190",
-      "email": "developerashish02@gmail.com",
-      "password": "Ashugaikwad1@",
-      "username": "T2121361246550"
     }
   ],
   "tickets": [
     {
-      "id": "3e56",
-      "ticket-name": "Not Able to login",
+      "id": "6374",
+      "ticket-name": "hello ashish",
       "priority": "high",
-      "file": null,
-      "description": "i am not able to login into the app pls fix that as soon as possible",
-      "date": "2024-05-09",
-      "userId": "8002"
+      "file": "",
+      "description": "ram ram hai bhai sariyane",
+      "date": "2024-05-10",
+      "userId": "ad63"
     },
     {
-      "id": "9255",
-      "ticket-name": "issue on apps ",
-      "priority": "medium",
-      "file": null,
-      "description": "i have some issues on apps ",
-      "date": "2024-05-09",
-      "userId": "8002"
-    },
-    {
-      "id": "8a1b",
-      "ticket-name": "Not Able to login",
-      "priority": "low",
-      "file": null,
-      "description": "not able to find the passwords ",
-      "date": "2024-05-09",
-      "userId": "8002"
-    },
-    {
-      "id": "2610",
-      "ticket-name": "Not Able to login",
+      "id": "f000",
+      "ticket-name": "hello bachho",
       "priority": "high",
-      "file": null,
-      "description": "hello boss",
-      "date": "2024-05-09",
-      "userId": "8002"
-    },
-    {
-      "id": "cbbc",
-      "ticket-name": "Not Able to login",
-      "priority": "high",
-      "file": null,
-      "description": "aaaaaaaa",
-      "date": "2024-05-09",
-      "userId": "8002"
-    },
-    {
-      "id": "4aa2",
-      "ticket-name": "Not Able to login",
-      "priority": "medium",
-      "file": null,
-      "description": "hello bacchhi",
-      "date": "2024-05-09",
-      "userId": "3445"
-    },
-    {
-      "id": "dcb4",
-      "ticket-name": "Not Able to login",
-      "priority": "medium",
-      "file": null,
-      "description": "hello bhai how are you",
-      "date": "2024-05-09",
-      "userId": "3445"
+      "file": "",
+      "description": "kaise hai app majama",
+      "date": "2024-05-10",
+      "userId": "ca19"
     }
   ]
 }

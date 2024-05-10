@@ -10,6 +10,7 @@ import TicketForm from "./component/Dashboard/TicketForm.jsx";
 import Protected from "./Protected.jsx";
 import Tickets from "./component/Dashboard/Tickets.jsx";
 import CreateTicketPage from "./component/Dashboard/CreateTicketPage.jsx";
+import TechSupportDashboard from "./component/TechSupportDashboard/TechSupportDashboard.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -43,6 +44,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/tech-dashboard",
+        element: (
+          <Protected>
+            <TechSupportDashboard />
+          </Protected>
+        ),
       },
     ],
   },

@@ -5,18 +5,17 @@ import { NavLink } from "react-router-dom";
 import useGetUser from "../../Hooks/useGetUser";
 
 const Tickets = () => {
-  const { data: userData } = useGetUser();
-  const userId = userData?.id;
+  const userInfo = useGetUser();
 
   const {
     data: tickets,
     isError,
     isLoading,
     isSuccess,
-  } = useGetUsersTicketsQuery(userId);
+  } = useGetUsersTicketsQuery();
 
   const userTickets =
-    isSuccess && tickets?.filter((user) => user?.userId == userData.id);
+    isSuccess && tickets?.filter((user) => user?.userId == userInfo?.id);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -42,7 +41,7 @@ const Tickets = () => {
 
       <div className="flex  flex-col items-center ">
         {userTickets?.map((ticket) => (
-          <Ticket key={ticket.id} ticket={ticket} />
+          <Ticket key={ticket.id} ticket={ticket} userInfo={userInfo} />
         ))}
       </div>
     </div>

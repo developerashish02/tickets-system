@@ -1,14 +1,10 @@
 import React from "react";
 import useGetUser from "../../Hooks/useGetUser";
 
-const Ticket = ({ ticket }) => {
+const Ticket = ({ ticket, userInfo }) => {
   const { date, description, "ticket-name": ticketName, id } = ticket;
-  const { data } = useGetUser();
-  const { username } = data;
 
-  console.log("data", data);
-
-  console.log(ticket, "ticket");
+  console.log(userInfo, "ticket");
   return (
     <div className="bg-white p-4 m-4 shadow-md rounded-md w-8/12">
       <div className="mb-2 flex space-x-2 items-center">
@@ -31,7 +27,7 @@ const Ticket = ({ ticket }) => {
           src="https://imgs.search.brave.com/INxZ1HlsxtfR-5xtNfavRgMyJ0wiVETft-WsJxJE2Jo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTEz/Nzg1MTU3NC9waG90/by9wcm9maWxlLW9m/LXlvdW5nLXdvbWFu/cy1mYWNlLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1GQjIy/UmIwM3NZZkNiTl9M/MmNoQ2psNHVTN2JU/VTdWN1U5WEUySEZx/SFpRPQ"
           alt="profile"
         />
-        <span>{username}</span>
+        <span>{userInfo?.username}</span>
       </div>
     </div>
   );

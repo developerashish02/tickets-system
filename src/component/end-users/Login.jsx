@@ -4,8 +4,8 @@ import {
 } from "../../utils/constants";
 import { useFormik } from "formik";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useSignUpMutation } from "../../services/SignUpApi";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useSignInQuery, useSignUpMutation } from "../../services/SignUpApi";
 import {
   validationSchemaForSignIn,
   validationSchemaForSignUp,
@@ -13,11 +13,17 @@ import {
 import * as Yup from "yup";
 
 const Login = () => {
+  const {
+    isError,
+    isSuccess,
+    data: users,
+    isLoading,
+    error,
+  } = useSignInQuery();
+
   const [signIn, setSignIn] = useState(true);
   const [createUser] = useSignUpMutation();
   const navigate = useNavigate();
-
-  console.log(signIn, "sign in state ");
 
   const formik = useFormik({
     initialValues: signIn ? initialValuesForSignIn : initialValuesForSignUp,
@@ -25,19 +31,85 @@ const Login = () => {
       signIn ? validationSchemaForSignIn : validationSchemaForSignUp
     ),
     onSubmit: async (values, { resetForm, setSubmitting }) => {
+      const { email, username, password, role } = values;
       if (!signIn) {
+        const emailExist =
+          isSuccess && users.some((user) => user.email === email);
+
+        const userNameExist =
+          isSuccess && users.some((user) => user.username === username);
+
+        if (emailExist) {
+          formik.setFieldError("email", "Email already exists");
+        }
+
+        if (userNameExist) {
+          formik.setFieldError("username", "Username already exists");
+        }
+
+        if (emailExist || userNameExist) {
+          setSubmitting(false);
+          return;
+        }
+
         const user = await createUser(values);
         const userString = JSON.stringify(user);
         localStorage.setItem("user", userString);
-        navigate("/");
+
+        if (role === "user") {
+          navigate("/");
+        }
+
+        if (role === "/tech-support") {
+          navigate("/tech-dashboard");
+        }
+
+        setSubmitting(false);
+        resetForm();
       } else {
-        console.log("values...", values);
+        const userDetails =
+          isSuccess &&
+          users?.some(
+            (user) => user?.email === email && user?.password === password
+          );
+
+        if (!userDetails) {
+          formik.setFieldError(
+            "password",
+            "User not found. Please check your credentials and try again."
+          );
+          setSubmitting(false);
+          return;
+        }
+
+        const user =
+          isSuccess &&
+          users.find(
+            (user) => user?.email === email && user?.password === password
+          );
+
+        const userString = JSON.stringify(user);
+        localStorage.setItem("user", userString);
+
+        const { role } = user;
+
+        if (role === "user") {
+          navigate("/");
+        }
+
+        if (role === "tech-support") {
+          navigate("/tech-dashboard");
+        }
       }
 
       setSubmitting(false);
       resetForm();
     },
   });
+
+  if (isLoading) {
+    return <h1>Loading....</h1>;
+  }
 
   return (
     <div className="bg-gray-200 min-h-screen flex justify-center items-center">
@@ -109,12 +181,15 @@ const Login = () => {
                 className="border-2 border-gray-500 py-3 w-full rounded-xl pl-4"
                 placeholder="role"
               >
-                <option value="user">User</option>
+                <option value="user" selected>
+                  User
+                </option>
                 <option value="tech-support">Tech Support</option>
                 <option value="admin">Admin</option>
               </select>
             </div>
           )}
+
           <button
             type="submit"
             className="w-full py-3 px-2 bg-[#FAB005] font-[Poppins] text-base font-semibold rounded-xl border-2 border-black border-b-8"

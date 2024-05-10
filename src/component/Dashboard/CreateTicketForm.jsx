@@ -9,7 +9,6 @@ import useGetUser from "../../Hooks/useGetUser";
 const validationSchema = Yup.object({
   "ticket-name": Yup.string().required("Ticket name is required"),
   priority: Yup.string().required("Priority status is required"),
-  file: Yup.mixed().notRequired(),
   description: Yup.string().required("Description is required"),
   date: Yup.date().required("Date is required"),
   userId: Yup.string().required("user id is required"),
@@ -17,27 +16,24 @@ const validationSchema = Yup.object({
 
 const CreateTicketForm = () => {
   const user = useGetUser();
-  const { refetch } = useGetUsersTicketsQuery();
 
   const initialValues = {
     "ticket-name": "",
     priority: "low",
-    file: null,
+    file: "",
     description: "",
     date: new Date().toISOString().substr(0, 10),
-    userId: user?.data?.id,
+    userId: user?.data?.id || user?.id,
   };
   console.log(user, "user details");
   const [createTicket, { isError, isSuccess, data, isLoading }] =
     useCreateTicketMutation();
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    // Handle form submission logic here
     console.log("Form values:", values);
     await createTicket(values);
     console.log(data, "Api data");
     resetForm();
     setSubmitting(false);
-    refetch();
   };
 
   return (
