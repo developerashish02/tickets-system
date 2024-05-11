@@ -12,6 +12,8 @@ import Tickets from "./component/Dashboard/Tickets.jsx";
 import CreateTicketPage from "./component/Dashboard/CreateTicketPage.jsx";
 import TechSupportDashboard from "./component/TechSupportDashboard/TechSupportDashboard.jsx";
 import TicketResponse from "./component/TechSupportDashboard/TicketResponse.jsx";
+import TicketDetails from "./component/Dashboard/TicketResponseDetails.jsx";
+import TicketResponseDetails from "./component/Dashboard/TicketResponseDetails.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -33,6 +35,10 @@ const appRouter = createBrowserRouter([
           {
             path: "",
             element: <Tickets />,
+          },
+          {
+            path: "/ticket-response/:ticketId",
+            element: <TicketResponseDetails />,
           },
         ],
       },

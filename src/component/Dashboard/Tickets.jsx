@@ -1,7 +1,7 @@
 import React from "react";
 import { useGetUsersTicketsQuery } from "../../services/ticketsApi";
 import Ticket from "./Ticket";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useGetUser from "../../Hooks/useGetUser";
 
 const Tickets = () => {
@@ -25,8 +25,6 @@ const Tickets = () => {
     return <div>Error loading tickets</div>;
   }
 
-  console.log(tickets, "tickets");
-
   return (
     <div className="w-full h-full bg-[#E7E7E7] p-4 mx-auto">
       <div className="flex justify-around">
@@ -39,9 +37,15 @@ const Tickets = () => {
         </NavLink>
       </div>
 
-      <div className="flex  flex-col items-center ">
+      <div>
         {userTickets?.map((ticket) => (
-          <Ticket key={ticket.id} ticket={ticket} userInfo={userInfo} />
+          <Link
+            key={ticket.id}
+            to={`/ticket-response/${ticket?.id}`}
+            className="flex  flex-col items-center "
+          >
+            <Ticket ticket={ticket} userInfo={userInfo} />
+          </Link>
         ))}
       </div>
     </div>

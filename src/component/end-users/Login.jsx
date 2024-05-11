@@ -73,6 +73,8 @@ const Login = () => {
             (user) => user?.email === email && user?.password === password
           );
 
+        console.log(userDetails, "userDetails");
+
         if (!userDetails) {
           formik.setFieldError(
             "password",

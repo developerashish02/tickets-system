@@ -3,16 +3,24 @@ import React from "react";
 import * as Yup from "yup";
 import {
   useAddReplyToTicketMutation,
-  useGetUsersTicketsQuery,
+  useGetUserTicketQuery,
+  useMarkAsResolvedMutation,
 } from "../services/ticketsApi";
+import useGetUser from "../Hooks/useGetUser";
 
 const ReplayForm = ({ moreInfo }) => {
+  const { isResolved, id } = moreInfo;
   const [addReplyToTicket, { isLoading }] = useAddReplyToTicketMutation();
+  const user = useGetUser();
+
+  const [markAsResolved] = useMarkAsResolvedMutation();
 
   const initialValues = {
     file: "",
     description: "",
-    isResolved: false, // Add a new field for marking ticket as resolved
+    ticketId: id,
+    date: new Date().toISOString().substr(0, 10),
+    userName: user?.username,
   };
 
   const validationSchema = Yup.object({
@@ -25,6 +33,10 @@ const ReplayForm = ({ moreInfo }) => {
     await addReplyToTicket(reply);
     setSubmitting(false);
     resetForm();
+  };
+
+  const handleResolved = () => {
+    markAsResolved(id);
   };
 
   return (
@@ -58,16 +70,18 @@ const ReplayForm = ({ moreInfo }) => {
           </div>
 
           <div>
-            <button
-              type="test"
-              className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
-            >
-              Mark as resolved
-              <i className="fa-solid fa-arrow-right-to-bracket ml-2"></i>
-            </button>
+            {!isResolved && (
+              <button
+                onClick={handleResolved}
+                type="test"
+                className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+              >
+                Mark as resolved
+                <i className="fa-solid fa-arrow-right-to-bracket ml-2"></i>
+              </button>
+            )}
             <button
               type="submit"
-              className="py-3 px-2 bg-[#FAB005] font-[Poppins] text-base font-semibold rounded-xl border-2 border-black border-b-4 "
               className="text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
             >
               Replay

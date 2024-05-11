@@ -24,60 +24,49 @@
   ],
   "tickets": [
     {
-      "id": "6374",
-      "ticket-name": "hello ashish",
-      "priority": "high",
-      "file": "",
-      "description": "ram ram hai bhai sariyane",
-      "date": "2024-05-10",
-      "userId": "ad63"
-    },
-    {
-      "id": "f000",
-      "ticket-name": "hello bachho",
-      "priority": "high",
-      "file": "",
-      "description": "kaise hai app majama",
-      "date": "2024-05-10",
-      "userId": "ca19",
-      "replies": []
-    },
-    {
-      "id": "8678",
+      "id": "5b4f",
       "ticket-name": "i have some issue when i am calling ",
+      "priority": "medium",
+      "file": "",
+      "description": "i have issues lots of issues ",
+      "date": "2024-05-10",
+      "userId": "ad63",
+      "isResolved": true
+    },
+    {
+      "id": "4757",
+      "ticket-name": "Not able to watch movies",
       "priority": "high",
       "file": "",
-      "description": "aaaaaaaaaaaaaaaa",
+      "description": "not able to login in pls fix that ",
       "date": "2024-05-10",
-      "userId": "257c"
+      "userId": "ad63",
+      "isResolved": true
     }
   ],
   "ticket-replies": [
     {
-      "id": "285a",
+      "id": "7de0",
       "userId": "ad63",
       "file": "",
-      "description": "hello "
+      "description": "bro you need to start internet first",
+      "ticketId": "5b4f"
     },
     {
-      "id": "4d6f",
+      "id": "ed0d",
       "userId": "ad63",
       "file": "",
-      "description": "hello "
+      "description": "undustand i mark at resolved for now ",
+      "ticketId": "5b4f"
     },
     {
-      "id": "1bf2",
-      "userId": "ca19",
-      "file": "C:\\fakepath\\Ashish Resume 1.pdf",
-      "description": "heee",
-      "isResolved": false
-    },
-    {
-      "id": "bc72",
-      "userId": "ca19",
-      "file": "C:\\fakepath\\Ashish _Gaikwad.pdf",
-      "description": "kasie ho bacho ",
-      "isResolved": false
+      "id": "6bae",
+      "userId": "ad63",
+      "file": "",
+      "description": "hello ashish bhai i think this form is working now ..❤️⭐🚀",
+      "ticketId": "5b4f",
+      "date": "2024-05-11",
+      "userName": "akaThangesh1"
     }
   ]
 }

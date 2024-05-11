@@ -32,7 +32,6 @@ const CreateTicketForm = () => {
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     console.log("Form values:", values);
     await createTicket(values);
-    console.log(data, "Api data");
     resetForm();
     setSubmitting(false);
   };
