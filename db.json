@@ -27,6 +27,20 @@
       "password": "Ashugaikwad1@",
       "username": "admin",
       "role": "admin"
+    },
+    {
+      "id": "1a28",
+      "email": "developerashish0a2@gmail.com",
+      "password": "Ashugaikwad1@",
+      "username": "ashugaikwad496_112",
+      "role": "user"
+    },
+    {
+      "id": "52e9",
+      "email": "developerashishaa02@gmail.com",
+      "password": "Ashugaikwad1@",
+      "username": "ashugaikwad496_112a",
+      "role": "user"
     }
   ],
   "tickets": [
@@ -49,6 +63,16 @@
       "date": "2024-05-10",
       "userId": "ad63",
       "isResolved": true
+    },
+    {
+      "id": "dae2",
+      "ticket-name": "hello bachho",
+      "priority": "medium",
+      "file": "",
+      "description": "some issue 1",
+      "date": "2024-05-11",
+      "userId": "ad63",
+      "isResolved": false
     }
   ],
   "ticket-replies": [

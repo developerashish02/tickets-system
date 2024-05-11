@@ -34,7 +34,7 @@ const appRouter = createBrowserRouter([
             element: <CreateTicketPage />,
           },
           {
-            path: "",
+            path: "/",
             element: <Tickets />,
           },
           {

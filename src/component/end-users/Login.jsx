@@ -52,8 +52,8 @@ const Login = () => {
           return;
         }
 
-        const user = await createUser(values);
-        const userString = JSON.stringify(user);
+        await createUser(values);
+        const userString = JSON.stringify(values);
         localStorage.setItem("user", userString);
 
         if (role === "user") {
@@ -139,7 +139,7 @@ const Login = () => {
                 id="username"
                 {...formik.getFieldProps("username")}
                 className="border-2 border-gray-500 py-3 w-full rounded-xl pl-4"
-                placeholder="Ashish Gaikwad"
+                placeholder="ashishGaikwad"
               />
               {formik.errors.username && formik.touched.username && (
                 <div className="text-red-500">{formik.errors.username}</div>
@@ -191,12 +191,13 @@ const Login = () => {
                 className="border-2 border-gray-500 py-3 w-full rounded-xl pl-4"
                 placeholder="role"
               >
-                <option value="user" selected>
-                  User
-                </option>
+                <option value="user">User</option>
                 <option value="tech-support">Tech Support</option>
                 <option value="admin">Admin</option>
               </select>
+              {formik.errors.role && formik.touched.role && (
+                <div className="text-red-500">{formik.errors.role}</div>
+              )}
             </div>
           )}
 
