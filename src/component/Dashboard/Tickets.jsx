@@ -38,10 +38,19 @@ const Tickets = () => {
       </div>
 
       <div>
-        {userTickets?.map((ticket) => (
+        {/* {userTickets?.map((ticket) => (
           <Link
             key={ticket.id}
             to={`/ticket-response/${ticket?.id}`}
+            className="flex  flex-col items-center "
+          >
+            <Ticket ticket={ticket} userInfo={userInfo} />
+          </Link>
+        ))} */}
+        {userTickets?.map((ticket) => (
+          <Link
+            key={ticket.id}
+            // to={`/ticket-response/${ticket?.id}`}
             className="flex  flex-col items-center "
           >
             <Ticket ticket={ticket} userInfo={userInfo} />

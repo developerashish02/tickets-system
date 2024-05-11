@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import TicketDetails from "../TicketDetails";
 import ReplayForm from "../ReplayForm";
-import useGetUser from "../../Hooks/useGetUser";
 
 const Ticket = ({ ticket, userInfo }) => {
   const [replay, setReplay] = useState(false);
+
+  const handleOpenForm = (e) => {
+    // e.preventDefault();
+    setReplay(!replay);
+  };
 
   return (
     <div className="bg-white p-4 m-4 shadow-md rounded-md w-8/12">
@@ -17,7 +21,7 @@ const Ticket = ({ ticket, userInfo }) => {
 
         <p
           className="font-bold text-blue-500 underline cursor-pointer"
-          onClick={() => setReplay(!replay)}
+          onClick={handleOpenForm}
         >
           Open Tickets
         </p>

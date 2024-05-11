@@ -13,6 +13,8 @@ const ReplayForm = ({ moreInfo }) => {
   const [addReplyToTicket, { isLoading }] = useAddReplyToTicketMutation();
   const user = useGetUser();
 
+  console.log(user, "user");
+
   const [markAsResolved] = useMarkAsResolvedMutation();
 
   const initialValues = {
@@ -28,6 +30,7 @@ const ReplayForm = ({ moreInfo }) => {
   });
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    console.log("calling component");
     const { userId } = moreInfo;
     const reply = { userId, ...values };
     await addReplyToTicket(reply);
