@@ -2,6 +2,7 @@ import React from "react";
 import Ticket from "../Dashboard/Ticket";
 import { useGetUsersTicketsQuery } from "../../services/ticketsApi";
 import useGetUser from "../../Hooks/useGetUser";
+import { useSignInQuery } from "../../services/SignUpApi";
 
 const AdminDashboard = () => {
   const {
@@ -10,6 +11,8 @@ const AdminDashboard = () => {
     isSuccess,
     isError,
   } = useGetUsersTicketsQuery();
+
+
 
   const userInfo = useGetUser();
 

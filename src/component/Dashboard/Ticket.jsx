@@ -3,15 +3,27 @@ import TicketDetails from "../TicketDetails";
 import ReplayForm from "../ReplayForm";
 import useGetUser from "../../Hooks/useGetUser";
 import DropdownForm from "../DropdownForm";
+import { useSignInQuery } from "../../services/SignUpApi";
 
 const Ticket = ({ ticket, userInfo }) => {
   const [replay, setReplay] = useState(false);
+  const {
+    data: techSupport,
+    isSuccess: techIsSuccess,
+    isLoading,
+  } = useSignInQuery();
+
+  const techTeam =
+    techIsSuccess &&
+    techSupport?.filter((user) => user?.role === "tech-support");
 
   const handleOpenForm = (e) => {
-    // e.preventDefault();
     setReplay(!replay);
   };
 
+  if (isLoading) {
+    return <h1>Loading.....</h1>;
+  }
   return (
     <div className="bg-white p-4 m-4 shadow-md rounded-md w-8/12">
       <TicketDetails moreInfo={ticket} />
@@ -29,8 +41,14 @@ const Ticket = ({ ticket, userInfo }) => {
         </p>
       </div>
 
-      {userInfo.role === "admin" && <DropdownForm />}
-      {userInfo.role !== "admin" && <ReplayForm moreInfo={ticket} />}
+      {userInfo.role === "admin" && (
+        <DropdownForm
+          techTeam={techTeam}
+          userId={userInfo?.id}
+          ticketId={ticket?.id}
+        />
+      )}
+      {userInfo.role !== "admin" && replay && <ReplayForm moreInfo={ticket} />}
     </div>
   );
 };

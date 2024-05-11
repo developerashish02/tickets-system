@@ -34,6 +34,18 @@ export const ticketsApi = createApi({
       }),
     }),
 
+    assignedTicket: builder.mutation({
+      query: (data) => ({
+        url: "/tickets-assigned",
+        method: "POST",
+        body: data,
+      }),
+    }),
+
+    getAssignedTicket: builder.query({
+      query: () => "/tickets-assigned",
+    }),
+
     addReplyToTicket: builder.mutation({
       query: (updatedTicket) => ({
         url: "/ticket-replies",
@@ -51,4 +63,6 @@ export const {
   useGetUserTicketQuery,
   useMarkAsResolvedMutation,
   useGetUsersTicketRelyQuery,
+  useAssignedTicketMutation,
+  useGetAssignedTicketQuery
 } = ticketsApi;

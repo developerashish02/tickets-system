@@ -102,5 +102,19 @@
       "date": "2024-05-11",
       "userName": "akaThangesh1"
     }
+  ],
+  "tickets-assigned": [
+    {
+      "id": "a4d8",
+      "dropdown": "257c",
+      "userId": "4883",
+      "ticketId": "4757"
+    },
+    {
+      "id": "f79a",
+      "dropdown": "257c",
+      "userId": "4883",
+      "ticketId": "5b4f"
+    }
   ]
 }
