@@ -14,6 +14,7 @@ import TechSupportDashboard from "./component/TechSupportDashboard/TechSupportDa
 import TicketResponse from "./component/TechSupportDashboard/TicketResponse.jsx";
 import TicketDetails from "./component/Dashboard/TicketResponseDetails.jsx";
 import TicketResponseDetails from "./component/Dashboard/TicketResponseDetails.jsx";
+import AdminDashboard from "./component/AdminDashboard/AdminDashboard.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -53,6 +54,16 @@ const appRouter = createBrowserRouter([
           {
             path: "/ticket-response",
             element: <TicketResponse />,
+          },
+        ],
+      },
+
+      {
+        element: <Protected role="admin" />,
+        children: [
+          {
+            path: "/admin",
+            element: <AdminDashboard />,
           },
         ],
       },

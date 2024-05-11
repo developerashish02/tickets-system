@@ -60,8 +60,12 @@ const Login = () => {
           navigate("/");
         }
 
-        if (role === "/tech-support") {
+        if (role === "tech-support") {
           navigate("/tech-dashboard");
+        }
+
+        if (role === "admin") {
+          navigate("/admin");
         }
 
         setSubmitting(false);
@@ -101,6 +105,10 @@ const Login = () => {
 
         if (role === "tech-support") {
           navigate("/tech-dashboard");
+        }
+
+        if (role === "admin") {
+          navigate("/admin");
         }
       }
 

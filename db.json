@@ -20,6 +20,13 @@
       "password": "Ashugaikwad1@",
       "username": "T2121361246530",
       "role": "user"
+    },
+    {
+      "id": "4883",
+      "email": "admin@gmail.com",
+      "password": "Ashugaikwad1@",
+      "username": "admin",
+      "role": "admin"
     }
   ],
   "tickets": [

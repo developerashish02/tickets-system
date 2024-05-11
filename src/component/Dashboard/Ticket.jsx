@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import TicketDetails from "../TicketDetails";
 import ReplayForm from "../ReplayForm";
+import useGetUser from "../../Hooks/useGetUser";
+import DropdownForm from "../DropdownForm";
 
 const Ticket = ({ ticket, userInfo }) => {
   const [replay, setReplay] = useState(false);
@@ -27,7 +29,8 @@ const Ticket = ({ ticket, userInfo }) => {
         </p>
       </div>
 
-      {replay && <ReplayForm moreInfo={ticket} />}
+      {userInfo.role === "admin" && <DropdownForm />}
+      {userInfo.role !== "admin" && <ReplayForm moreInfo={ticket} />}
     </div>
   );
 };
