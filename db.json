@@ -41,6 +41,13 @@
       "password": "Ashugaikwad1@",
       "username": "ashugaikwad496_112a",
       "role": "user"
+    },
+    {
+      "id": "4c84",
+      "email": "test2@gmail.com",
+      "password": "Ashugaikwad1@",
+      "username": "techSupport2",
+      "role": "tech-support"
     }
   ],
   "tickets": [
@@ -81,6 +88,16 @@
       "file": "",
       "description": "Ashugaikw;;sss",
       "date": "2024-05-11",
+      "userId": "ad63",
+      "isResolved": true
+    },
+    {
+      "id": "62bd",
+      "ticket-name": "hello pls fix that issues ",
+      "priority": "high",
+      "file": "",
+      "description": "hello bbbbbbbbbbbbbbbbbbbbb",
+      "date": "2024-05-12",
       "userId": "ad63",
       "isResolved": true
     }
@@ -171,6 +188,24 @@
       "ticketId": "5b4f",
       "date": "2024-05-12",
       "userName": "akaThangesh1"
+    },
+    {
+      "id": "0034",
+      "userId": "ad63",
+      "file": "",
+      "description": "okay i am undustand mark as resolved",
+      "ticketId": "62bd",
+      "date": "2024-05-12",
+      "userName": "ashishGaikwad"
+    },
+    {
+      "id": "f312",
+      "userId": "ad63",
+      "file": "",
+      "description": "kaka",
+      "ticketId": "62bd",
+      "date": "2024-05-12",
+      "userName": "ashishGaikwad"
     }
   ],
   "tickets-assigned": [
@@ -197,6 +232,12 @@
       "dropdown": "257c",
       "userId": "4883",
       "ticketId": "77de"
+    },
+    {
+      "id": "8e6f",
+      "dropdown": "4c84",
+      "userId": "4883",
+      "ticketId": "5b4f"
     }
   ]
 }

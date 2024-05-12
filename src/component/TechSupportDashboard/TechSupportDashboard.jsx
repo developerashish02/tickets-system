@@ -41,9 +41,9 @@ const TechSupportDashboard = () => {
   }
 
   return (
-    <div className="w-full h-full bg-[#E7E7E7] p-4 mx-auto">
-      <h1>Tech Dashboard</h1>
-      <div>
+    <div className="w-full h-full bg-[#E7E7E7] p-4 ">
+      <h1 className="font-bold text-center text-xl">Tech Dashboard</h1>
+      <div className="flex justify-center flex-col items-center">
         {isSuccess &&
           assignedTickets?.map((ticket) => (
             <Ticket key={ticket.id} ticket={ticket} userInfo={userInfo} />

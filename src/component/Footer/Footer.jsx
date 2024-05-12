@@ -21,12 +21,12 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
-                  <Link to="/" className="hover:underline">
+                  <Link to="#" className="hover:underline">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:underline">
+                  <Link to="#" className="hover:underline">
                     About
                   </Link>
                 </li>
@@ -38,17 +38,12 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
-                  <a
-                    href="https://github.com/hiteshchoudhary"
-                    className="hover:underline"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <a href="#" className="hover:underline" rel="noreferrer">
                     Github
                   </a>
                 </li>
                 <li>
-                  <Link to="/" className="hover:underline">
+                  <Link to="#" className="hover:underline">
                     Discord
                   </Link>
                 </li>
