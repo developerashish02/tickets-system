@@ -37,24 +37,9 @@ const Tickets = () => {
         </NavLink>
       </div>
 
-      <div>
-        {/* {userTickets?.map((ticket) => (
-          <Link
-            key={ticket.id}
-            to={`/ticket-response/${ticket?.id}`}
-            className="flex  flex-col items-center "
-          >
-            <Ticket ticket={ticket} userInfo={userInfo} />
-          </Link>
-        ))} */}
+      <div className="flex  flex-col items-center ">
         {userTickets?.map((ticket) => (
-          <Link
-            key={ticket.id}
-            // to={`/ticket-response/${ticket?.id}`}
-            className="flex  flex-col items-center "
-          >
-            <Ticket ticket={ticket} userInfo={userInfo} />
-          </Link>
+          <Ticket ticket={ticket} userInfo={userInfo} key={ticket.id} />
         ))}
       </div>
     </div>
