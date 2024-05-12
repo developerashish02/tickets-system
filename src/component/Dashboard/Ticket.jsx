@@ -35,12 +35,14 @@ const Ticket = ({ ticket, userInfo }) => {
         </div>
 
         <div className="flex space-x-4">
-          <p
-            className="font-bold text-white  cursor-pointer bg-blue-500 px-4 py-2 rounded-md hover:bg-blue-400"
-            onClick={handleOpenForm}
-          >
-            Reply Ticket
-          </p>
+          {userInfo?.role !== "admin" && (
+            <p
+              className="font-bold text-white  cursor-pointer bg-blue-500 px-4 py-2 rounded-md hover:bg-blue-400"
+              onClick={handleOpenForm}
+            >
+              Reply Ticket
+            </p>
+          )}
 
           {userInfo?.role === "user"}
         </div>

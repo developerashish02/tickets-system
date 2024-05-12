@@ -5,6 +5,7 @@ export const ticketsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:3000",
   }),
+  tagTypes: ["Tickets", "Response", "Assigned"],
   endpoints: (builder) => ({
     createTicket: builder.mutation({
       query: (ticketsData) => ({
@@ -12,14 +13,17 @@ export const ticketsApi = createApi({
         method: "POST",
         body: ticketsData,
       }),
+      invalidatesTags: ["Tickets"],
     }),
 
     getUsersTickets: builder.query({
       query: (userId) => `/tickets`,
+      providesTags: ["Tickets", "Assigned"],
     }),
 
     getUsersTicketRely: builder.query({
       query: (userId) => `/ticket-replies`,
+      providesTags: ["Response"],
     }),
 
     getUserTicket: builder.query({
@@ -32,6 +36,7 @@ export const ticketsApi = createApi({
         method: "PATCH",
         body: { isResolved: true },
       }),
+      invalidatesTags: ["Tickets"],
     }),
 
     assignedTicket: builder.mutation({
@@ -40,10 +45,12 @@ export const ticketsApi = createApi({
         method: "POST",
         body: data,
       }),
+      invalidatesTags: ["Assigned"],
     }),
 
     getAssignedTicket: builder.query({
       query: () => "/tickets-assigned",
+      providesTags: ["Assigned"],
     }),
 
     addReplyToTicket: builder.mutation({
@@ -64,5 +71,5 @@ export const {
   useMarkAsResolvedMutation,
   useGetUsersTicketRelyQuery,
   useAssignedTicketMutation,
-  useGetAssignedTicketQuery
+  useGetAssignedTicketQuery,
 } = ticketsApi;

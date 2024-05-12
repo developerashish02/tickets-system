@@ -1,243 +1,145 @@
 {
   "users": [
     {
-      "id": "ad63",
-      "email": "developerashish02@gmail.com",
-      "password": "Ashugaikwad1@",
-      "username": "ashishGaikwad",
+      "id": "25aa",
+      "email": "example@example.com",
+      "password": "examplePassword123@",
+      "username": "exampleUser123",
       "role": "user"
     },
     {
-      "id": "257c",
-      "email": "test1@gmail.com",
+      "id": "359f",
+      "email": "techsupport@gmail.com",
       "password": "Ashugaikwad1@",
-      "username": "akaThangesh1",
+      "username": "TechSupport",
       "role": "tech-support"
     },
     {
-      "id": "ca19",
-      "email": "work.ashish.gaikwad@gmail.com",
-      "password": "Ashugaikwad1@",
-      "username": "T2121361246530",
-      "role": "user"
-    },
-    {
-      "id": "4883",
+      "id": "5efc",
       "email": "admin@gmail.com",
       "password": "Ashugaikwad1@",
       "username": "admin",
       "role": "admin"
     },
     {
-      "id": "1a28",
-      "email": "developerashish0a2@gmail.com",
+      "id": "2f68",
+      "email": "joe@gmail.com",
       "password": "Ashugaikwad1@",
-      "username": "ashugaikwad496_112",
-      "role": "user"
-    },
-    {
-      "id": "52e9",
-      "email": "developerashishaa02@gmail.com",
-      "password": "Ashugaikwad1@",
-      "username": "ashugaikwad496_112a",
-      "role": "user"
-    },
-    {
-      "id": "4c84",
-      "email": "test2@gmail.com",
-      "password": "Ashugaikwad1@",
-      "username": "techSupport2",
+      "username": "T2121361246530",
       "role": "tech-support"
     }
   ],
   "tickets": [
     {
-      "id": "5b4f",
-      "ticket-name": "i have some issue when i am calling ",
-      "priority": "medium",
-      "file": "",
-      "description": "i have issues lots of issues ",
-      "date": "2024-05-10",
-      "userId": "ad63",
-      "isResolved": true
-    },
-    {
-      "id": "4757",
-      "ticket-name": "Not able to watch movies",
+      "id": "2dc3",
+      "ticket-name": " \"Website Loading Slowly\"",
       "priority": "high",
       "file": "",
-      "description": "not able to login in pls fix that ",
-      "date": "2024-05-10",
-      "userId": "ad63",
+      "description": "The website is taking a long time to load, especially on the homepage. This issue started happening yesterday and seems to be affecting all users. Please investigate and resolve as soon as possible",
+      "date": "2024-05-12",
+      "userId": "25aa",
       "isResolved": true
     },
     {
-      "id": "dae2",
-      "ticket-name": "hello bachho",
+      "id": "a1ea",
+      "ticket-name": "hello brother",
+      "priority": "low",
+      "file": "",
+      "description": "how do do ",
+      "date": "2024-05-12",
+      "userId": "25aa",
+      "isResolved": true
+    },
+    {
+      "id": "bd81",
+      "ticket-name": "looks like working ",
+      "priority": "low",
+      "file": "",
+      "description": "fine then",
+      "date": "2024-05-12",
+      "userId": "25aa",
+      "isResolved": true
+    },
+    {
+      "id": "bbce",
+      "ticket-name": "ticket names",
       "priority": "medium",
       "file": "",
-      "description": "some issue 1",
-      "date": "2024-05-11",
-      "userId": "ad63",
+      "description": "here is new ticket",
+      "date": "2024-05-12",
+      "userId": "25aa",
       "isResolved": true
     },
     {
-      "id": "77de",
-      "ticket-name": "Not Able to login",
+      "id": "1326",
+      "ticket-name": "ticket names11",
       "priority": "medium",
       "file": "",
-      "description": "Ashugaikw;;sss",
-      "date": "2024-05-11",
-      "userId": "ad63",
-      "isResolved": true
-    },
-    {
-      "id": "62bd",
-      "ticket-name": "hello pls fix that issues ",
-      "priority": "high",
-      "file": "",
-      "description": "hello bbbbbbbbbbbbbbbbbbbbb",
+      "description": "aaaaaaaaaaaa",
       "date": "2024-05-12",
-      "userId": "ad63",
-      "isResolved": true
+      "userId": "25aa",
+      "isResolved": false
     }
   ],
-  "ticket-replies": [
-    {
-      "id": "7de0",
-      "userId": "ad63",
-      "file": "",
-      "description": "bro you need to start internet first",
-      "ticketId": "5b4f"
-    },
-    {
-      "id": "ed0d",
-      "userId": "ad63",
-      "file": "",
-      "description": "undustand i mark at resolved for now ",
-      "ticketId": "5b4f"
-    },
-    {
-      "id": "6bae",
-      "userId": "ad63",
-      "file": "",
-      "description": "hello ashish bhai i think this form is working now ..❤️⭐🚀",
-      "ticketId": "5b4f",
-      "date": "2024-05-11",
-      "userName": "akaThangesh1"
-    },
-    {
-      "id": "54ed",
-      "userId": "ad63",
-      "file": "",
-      "description": "hello ashish how are you ",
-      "ticketId": "4757",
-      "date": "2024-05-11",
-      "userName": "akaThangesh1"
-    },
-    {
-      "id": "e3c4",
-      "userId": "ad63",
-      "file": "",
-      "description": "pls fix that we need to working more on this ",
-      "ticketId": "4757",
-      "date": "2024-05-11",
-      "userName": "akaThangesh1"
-    },
-    {
-      "id": "80fd",
-      "userId": "ad63",
-      "file": "",
-      "description": "hello how are yoy ",
-      "ticketId": "4757",
-      "date": "2024-05-11",
-      "userName": "akaThangesh1"
-    },
-    {
-      "id": "e73e",
-      "userId": "ad63",
-      "file": "",
-      "description": "resolved ",
-      "ticketId": "dae2",
-      "date": "2024-05-11",
-      "userName": "akaThangesh1"
-    },
-    {
-      "id": "3468",
-      "userId": "ad63",
-      "file": "",
-      "description": "aaa",
-      "ticketId": "4757",
-      "date": "2024-05-12",
-      "userName": "akaThangesh1"
-    },
-    {
-      "id": "9987",
-      "userId": "ad63",
-      "file": "",
-      "description": "okay fine looks good ",
-      "ticketId": "5b4f",
-      "date": "2024-05-12",
-      "userName": "ashishGaikwad"
-    },
-    {
-      "id": "5a38",
-      "userId": "ad63",
-      "file": "",
-      "description": "have some issue need to look at ",
-      "ticketId": "5b4f",
-      "date": "2024-05-12",
-      "userName": "akaThangesh1"
-    },
-    {
-      "id": "0034",
-      "userId": "ad63",
-      "file": "",
-      "description": "okay i am undustand mark as resolved",
-      "ticketId": "62bd",
-      "date": "2024-05-12",
-      "userName": "ashishGaikwad"
-    },
-    {
-      "id": "f312",
-      "userId": "ad63",
-      "file": "",
-      "description": "kaka",
-      "ticketId": "62bd",
-      "date": "2024-05-12",
-      "userName": "ashishGaikwad"
-    }
-  ],
+  "ticket-replies": [],
   "tickets-assigned": [
     {
-      "id": "a4d8",
-      "dropdown": "257c",
-      "userId": "4883",
-      "ticketId": "4757"
+      "id": "c2ac",
+      "dropdown": "359f",
+      "ticketId": "d420"
     },
     {
-      "id": "f79a",
-      "dropdown": "257c",
-      "userId": "4883",
-      "ticketId": "5b4f"
+      "id": "fe72",
+      "dropdown": "359f",
+      "ticketId": "9243"
     },
     {
-      "id": "9daf",
-      "dropdown": "257c",
-      "userId": "4883",
-      "ticketId": "dae2"
+      "id": "64f3",
+      "dropdown": "359f",
+      "userId": "5efc",
+      "ticketId": "2dc3"
     },
     {
-      "id": "53e2",
-      "dropdown": "257c",
-      "userId": "4883",
-      "ticketId": "77de"
+      "id": "1a09",
+      "dropdown": "359f",
+      "userId": "5efc",
+      "ticketId": "a1ea"
     },
     {
-      "id": "8e6f",
-      "dropdown": "4c84",
-      "userId": "4883",
-      "ticketId": "5b4f"
+      "id": "154f",
+      "dropdown": "359f",
+      "userId": "5efc",
+      "ticketId": "bd81"
+    },
+    {
+      "id": "2de9",
+      "dropdown": "359f",
+      "userId": "5efc",
+      "ticketId": "2dc3"
+    },
+    {
+      "id": "623b",
+      "dropdown": "2f68",
+      "userId": "5efc",
+      "ticketId": "2dc3"
+    },
+    {
+      "id": "0e9e",
+      "dropdown": "2f68",
+      "userId": "5efc",
+      "ticketId": "a1ea"
+    },
+    {
+      "id": "93e3",
+      "dropdown": "359f",
+      "userId": "5efc",
+      "ticketId": "bbce"
+    },
+    {
+      "id": "c32b",
+      "dropdown": "359f",
+      "userId": "5efc",
+      "ticketId": "1326"
     }
   ]
 }

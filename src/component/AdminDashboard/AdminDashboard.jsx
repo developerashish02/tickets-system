@@ -12,8 +12,6 @@ const AdminDashboard = () => {
     isError,
   } = useGetUsersTicketsQuery();
 
-
-
   const userInfo = useGetUser();
 
   if (isLoading) {
@@ -21,9 +19,9 @@ const AdminDashboard = () => {
   }
 
   return (
-    <div className="w-full h-full bg-[#E7E7E7] p-4 mx-auto">
-      <h1>Admin Dashboard</h1>
-      <div>
+    <div className="w-full h-full bg-[#E7E7E7] p-4 mx-auto ">
+      <h1 className="text-center font-bold ">Admin Dashboard</h1>
+      <div className="flex justify-center flex-col items-center">
         {isSuccess &&
           tickets?.map((ticket) => (
             <Ticket key={ticket.id} ticket={ticket} userInfo={userInfo} />
