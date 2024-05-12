@@ -56,7 +56,8 @@ const CreateTicketForm = () => {
               />
               <ErrorMessage
                 name="ticket-name"
-                className="text-red-500 font-bold"
+                component="p"
+                className="text-red-500 font-bold "
               />
             </div>
             <div className="my-2 w-6/12">
@@ -71,18 +72,26 @@ const CreateTicketForm = () => {
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
               </Field>
-              <ErrorMessage name="priority" />
+              <ErrorMessage
+                name="priority"
+                component="p"
+                className="text-red-500 font-bold "
+              />
             </div>
           </div>
           <div className="my-2">
-            <label htmlFor="description">Issue Description</label>
+            <label htmlFor="description">Description</label>
             <Field
               as="textarea"
               name="description"
               className="py-3 px-3 w-full border border-gray-400 rounded-md my-2"
               placeholder="Describe the issue"
             />
-            <ErrorMessage name="description" />
+            <ErrorMessage
+              name="description"
+              component="p"
+              className="text-red-500 font-bold "
+            />
           </div>
           <div className="my-2">
             <label htmlFor="file">Upload File</label>

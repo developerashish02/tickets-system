@@ -51,7 +51,7 @@ const ReplayForm = ({ moreInfo }) => {
       >
         <Form>
           <div className="my-2">
-            <label htmlFor="description">Issue Description</label>
+            <label htmlFor="description">Description</label>
             <Field
               as="textarea"
               name="description"

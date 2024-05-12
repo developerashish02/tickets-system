@@ -11,6 +11,7 @@ import {
   validationSchemaForSignUp,
 } from "../../utils/validations";
 import * as Yup from "yup";
+import Loading from "../Loading";
 
 const Login = () => {
   const {
@@ -118,7 +119,7 @@ const Login = () => {
   });
 
   if (isLoading) {
-    return <h1>Loading....</h1>;
+    return <Loading />;
   }
 
   return (
@@ -197,6 +198,12 @@ const Login = () => {
               </select>
               {formik.errors.role && formik.touched.role && (
                 <div className="text-red-500">{formik.errors.role}</div>
+              )}
+
+              {isError && (
+                <div className="text-red-500">
+                  {error?.code - error?.message}
+                </div>
               )}
             </div>
           )}

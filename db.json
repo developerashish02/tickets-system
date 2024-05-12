@@ -72,7 +72,17 @@
       "description": "some issue 1",
       "date": "2024-05-11",
       "userId": "ad63",
-      "isResolved": false
+      "isResolved": true
+    },
+    {
+      "id": "77de",
+      "ticket-name": "Not Able to login",
+      "priority": "medium",
+      "file": "",
+      "description": "Ashugaikw;;sss",
+      "date": "2024-05-11",
+      "userId": "ad63",
+      "isResolved": true
     }
   ],
   "ticket-replies": [
@@ -125,6 +135,15 @@
       "ticketId": "4757",
       "date": "2024-05-11",
       "userName": "akaThangesh1"
+    },
+    {
+      "id": "e73e",
+      "userId": "ad63",
+      "file": "",
+      "description": "resolved ",
+      "ticketId": "dae2",
+      "date": "2024-05-11",
+      "userName": "akaThangesh1"
     }
   ],
   "tickets-assigned": [
@@ -139,6 +158,18 @@
       "dropdown": "257c",
       "userId": "4883",
       "ticketId": "5b4f"
+    },
+    {
+      "id": "9daf",
+      "dropdown": "257c",
+      "userId": "4883",
+      "ticketId": "dae2"
+    },
+    {
+      "id": "53e2",
+      "dropdown": "257c",
+      "userId": "4883",
+      "ticketId": "77de"
     }
   ]
 }
